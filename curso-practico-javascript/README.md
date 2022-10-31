@@ -29,7 +29,7 @@ curso  practico basico de  javascript
 
 ## TALLER #4: Puesta en practica de los anteriores talleres
 
--Primer paso: Planteamiento del problema.
+- Primer paso: Planteamiento del problema.
 
 En la empresa donde trabajo se cierra nomina los dias 30 de cada mes y se hacen los pagos de esa nomina los dias 5 de cada mes,  Se  quiere mostrar un resumen de la cantidad de horas  laboradas ya que  algunos colaboradores  han reclamado que no se les pasan todas las horas.
 
@@ -38,7 +38,7 @@ Analisando el desprendible de pago podemos juntar en categorias  los diferentes 
 Aparte se quiere hacer una comparativa de promedio de horas laboradas con anteriores meses y calcular en que meses se trabajo mas horas.
 
 
--Segundo Paso: Formulando la solucion al problema.
+- Segundo Paso: Formulando la solucion al problema.
 
 para que el empleado pueda comparar las horas que conto durante todo el mes se desarrolla en html una interfaz en la que pueda ingresar sus datos con su respectivo boton de accion para el resultado.
 
@@ -47,8 +47,8 @@ Despues  se  usara la formula de la mediana ya que pueden haber meses en los que
 
 Finalmente se hayara los tres meses de mas alta cantidad de  horas trabajadas segun los desprendibles de  pago.
 
--Tercer paso: Definir  variables  y funciones para  resolver  las  formulas planteadas.
+- Tercer paso: Definir  variables  y funciones para  resolver  las  formulas planteadas.
 
 
--Cuarto paso: Publicar los resultados en github.
+- Cuarto paso: Publicar los resultados en github.
 
