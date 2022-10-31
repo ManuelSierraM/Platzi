@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<meta charset="utf-8">
+
+<head>
+  <link rel="stylesheet" href="css/login.css">
+  <script src="javascript/validar_log.js"></script>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+  <canvas width="500 " height="680" id="canv">
+    <script src="./javascript/matrix.js"></script>
+
+  </canvas>
+
+  <div class="container-all">
+    <div class="login-register" id="login-register">
+      <div class="login" onclick="showloginform()">
+        <p>INGRESO</p>
+      </div>
+      <div class="register" onclick="showregisterform()">
+        <p>REGISTRO</p>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="forms-container">
+
+      <div class="forms">
+
+        <!-- Formulario de Login -->
+        <div class="login-form slide" id="loginForm">
+          <p class="error-default" id="error">Ingrese sus credenciales para iniciar sesión</p>
+
+          <br>
+
+          <input type="email" placeholder="Correo electronico" id="email">
+
+          <input type="password" placeholder="Contraseña" id="password">
+
+          <button onclick="signin()">INGRESAR</button>
+
+          <br>
+
+          <p class="error-default">Si ha olvidado contraseña.<a href="reset_key.html">Restablecela
+              aqui</a></p>
+
+        </div>
+
+
+        <!-- Formulario de registro --------------------->
+
+        <div class="register-form slide" id="registerForm">
+          <p class="error-default" id="error_reg">Cree su cuenta</p>
+
+          <br>
+
+          <input type="text" placeholder="Nombres" id="name">
+
+          <input type="text" placeholder="Apellidos" id="surname">
+
+          <input type="email" placeholder="Correo electronico" id="email_reg">
+
+          <input type="password" placeholder="Crear contraseña" id="password_reg">
+
+          <button onclick="register()">REGISTRAR</button>
+
+          <br>
+
+          <p class="error-default">Al hacer clic en REGISTRAR, aceptas nuestros.
+            <a onclick="policy()">Terminos y
+              condiciones</a>
+          </p>
+
+        </div>
+
+
+
+
+        <!-- Documento de politicas -->
+        <div class="privacy_policy slide" id="policy">
+
+          <header>TERMINOS Y CONDICIONES. </p>
+            <br>
+            <p class="error-default">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim beatae, eveniet provident id, facere quas
+              repudiandae quia, unde porro deleniti harum minus nisi doloribus. Consequatur quos natus quasi quia sit.
+
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto atque itaque nemo, impedit nostrum
+              iusto,
+              numquam rem suscipit ex exercitationem neque accusantium dolorem debitis commodi eligendi tempora
+              voluptatibus
+              ratione minus.
+
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos corrupti, voluptatum porro illo,
+              voluptates ex minima facere quod expedita sint distinctio qui ad cumque consequatur incidunt nulla rerum
+              minus
+              magni?
+
+
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim beatae, eveniet provident id, facere quas
+              repudiandae quia, unde porro deleniti harum minus nisi doloribus. Consequatur quos natus quasi quia sit.
+              <br><br><br>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto atque itaque nemo, impedit nostrum
+              iusto,
+              numquam rem suscipit ex exercitationem neque accusantium dolorem debitis commodi eligendi tempora
+              voluptatibus
+              ratione minus.
+
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos corrupti, voluptatum porro illo,
+              voluptates ex minima facere quod expedita sint distinctio qui ad cumque consequatur incidunt nulla rerum
+              minus
+              magni?
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim beatae, eveniet provident id, facere quas
+              repudiandae quia, unde porro deleniti harum minus nisi doloribus. Consequatur quos natus quasi quia sit.
+
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto atque itaque nemo, impedit nostrum
+              iusto,
+              numquam rem suscipit ex exercitationem neque accusantium dolorem debitis commodi eligendi tempora
+              voluptatibus
+              ratione minus.
+
+
+
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos corrupti, voluptatum porro illo,
+              voluptates ex minima facere quod expedita sint distinctio qui ad cumque consequatur incidunt nulla rerum
+              minus
+              magni?
+
+              <br><br>
+
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto atque itaque nemo, impedit nostrum
+              iusto,
+              numquam rem suscipit ex exercitationem neque accusantium dolorem debitis commodi eligendi tempora
+              voluptatibus
+              ratione minus.
+
+
+
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos corrupti, voluptatum porro illo,
+              voluptates ex minima facere quod expedita sint distinctio qui ad cumque consequatur incidunt nulla rerum
+              minus
+              magni?
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto atque itaque nemo, impedit nostrum
+              iusto,
+              numquam rem suscipit ex exercitationem neque accusantium dolorem debitis commodi eligendi tempora
+              voluptatibus
+              ratione minus.
+
+
+
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos corrupti, voluptatum porro illo,
+              voluptates ex minima facere quod expedita sint distinctio qui ad cumque consequatur incidunt nulla rerum
+              minus
+              magni?
+
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto atque itaque nemo, impedit nostrum
+              iusto,
+              numquam rem suscipit ex exercitationem neque accusantium dolorem debitis commodi eligendi tempora
+              voluptatibus
+              ratione minus.
+
+
+
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos corrupti, voluptatum porro illo,
+              voluptates ex minima facere quod expedita sint distinctio qui ad cumque consequatur incidunt nulla rerum
+              minus
+              magni?
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto atque itaque nemo, impedit nostrum
+              iusto,
+              numquam rem suscipit ex exercitationem neque accusantium dolorem debitis commodi eligendi tempora
+              voluptatibus
+              ratione minus.
+
+
+
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos corrupti, voluptatum porro illo,
+              voluptates ex minima facere quod expedita sint distinctio qui ad cumque consequatur incidunt nulla rerum
+              minus
+              magni?Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto atque itaque nemo, impedit
+              nostrum
+              iusto,
+              numquam rem suscipit ex exercitationem neque accusantium dolorem debitis commodi eligendi tempora
+              voluptatibus
+              ratione minus.
+
+
+
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos corrupti, voluptatum porro illo,
+              voluptates ex minima facere quod expedita sint distinctio qui ad cumque consequatur incidunt nulla rerum
+              minus
+              magni?
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto atque itaque nemo, impedit nostrum
+              iusto,
+              numquam rem suscipit ex exercitationem neque accusantium dolorem debitis commodi eligendi tempora
+              voluptatibus
+              ratione minus.
+
+
+
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos corrupti, voluptatum porro illo,
+              voluptates ex minima facere quod expedita sint distinctio qui ad cumque consequatur incidunt nulla rerum
+              minus
+              magni?
+
+
+
+          </header>
+
+
+          <button onclick=" showregisterform() ">ACEPTAR</button>
+
+
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+    <br><br><br>
+
+
+  </div>
+
+</body>
+
+</html>

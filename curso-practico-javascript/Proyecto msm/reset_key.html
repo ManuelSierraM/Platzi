@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<meta charset="utf-8">
+
+<head>
+  <link rel="stylesheet" href="css/login.css">
+  <script src="javascript/validar_log.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- wallpaper -->
+  <canvas width="500 " height="680" id="canv">
+    <script src="./javascript/matrix.js"></script>
+  </canvas>
+
+  <div class="container-all">
+
+    <br>
+
+    <div class="forms-container">
+
+      <div class="forms">
+
+        <div class="login-form slide" id="loginForm">
+          <p class="error-default" id="error">Ingrese el correo y la contraseña nueva a reestablecer. </p>
+
+          <br>
+
+          <input type="email" placeholder="E-mail" id="email">
+
+          <input type="password" placeholder="nueva contraseña" id="password">
+
+          <button onclick="reset_key()">REESTABLECER</button>
+
+          <br>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <br><br><br>
+
+
+  </div>
+
+</body>
+
+</html>

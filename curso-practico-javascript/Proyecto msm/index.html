@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <title> HOME MSM </title>
+  <link rel="stylesheet" href="css/style_index.css" type="text/css">
+  <link rel="stylesheet" href="./css/style_index_content.css" type="text/css">
+  <!-- Boxicons CDN Link -->
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+  <!-- fondo de  pantalla -->
+  <canvas id="canv">
+    <script src="./javascript/matrix.js"></script>
+  </canvas>
+
+
+  <!--barra responsiva lateral-------------------------------------------------------->
+  <!--<header>-->
+  <nav class="sidebar">
+    <div class="logo-details">
+      <div>
+        <i class='bx bxl-c-plus-plus icon'></i>
+        <div class="logo_name">CodingLab</div>
+        <i class='bx bx-menu' id="btn"></i>
+      </div>
+      <li class="search">
+        <i class='bx bx-search'></i>
+        <input type="text" id="input" placeholder="Search...">
+        <span class="tooltip">Search</span>
+      </li>
+    </div>
+
+
+    <ul class="nav-list">
+      <li>
+        <a class="dashboard" href="#">
+          <i class='bx bx-grid-alt'></i>
+          <span class="links_name">Dashboard</span>
+        </a>
+        <span class="tooltip">Dashboard</span>
+      </li>
+      <li>
+        <a class="user" href="#">
+          <i class='bx bx-user'></i>
+          <span class="links_name">User</span>
+        </a>
+        <span class="tooltip">User</span>
+      </li>
+      <li>
+        <a class="messages" href="#">
+          <i class='bx bx-chat'></i>
+          <span class="links_name">Messages</span>
+        </a>
+        <span class="tooltip">Messages</span>
+      </li>
+      <li>
+        <a class="analytics" href="#">
+          <i class='bx bx-pie-chart-alt-2'></i>
+          <span class="links_name">Analytics</span>
+        </a>
+        <span class="tooltip">Analytics</span>
+      </li>
+      <li>
+        <a class="files" href="#">
+          <i class='bx bx-folder'></i>
+          <span class="links_name">File Manager</span>
+        </a>
+        <span class="tooltip">Files</span>
+      </li>
+      <li>
+        <a class="order" href="#">
+          <i class='bx bx-cart-alt'></i>
+          <span class="links_name">Order</span>
+        </a>
+        <span class="tooltip">Order</span>
+      </li>
+      <li>
+        <a class="saved" href="#">
+          <i class='bx bx-heart'></i>
+          <span class="links_name">Saved</span>
+        </a>
+        <span class="tooltip">Saved</span>
+      </li>
+      <li>
+        <a class="setting" href="#">
+          <i class='bx bx-cog'></i>
+          <span class="links_name">Setting</span>
+        </a>
+        <span class="tooltip">Setting</span>
+      </li>
+      <li class="profile">
+        <div class="profile-details">
+          <img src="imagenes/perfil.jpg" alt="profileImg">
+          <div class="name_job">
+            <legend class="name">Manuel Sierra M</legend>
+            <span class="job">Web designer</span>
+          </div>
+        </div>
+        <a href="login_register.html"><i class='bx bx-log-out' id="log_out"></i></a>
+      </li>
+    </ul>
+  </nav>
+  <!--</header>-->
+
+  <!-- areas de la pagina ----------------------------------------------------------->
+
+  <main class="home-section">
+
+    <!-- seccion dashboard  ----------->
+    <h2 class="text1">Dashboard
+      <div id="dashboardContainer">
+        <i class='bx bx-caret-right' id="btnActivities"></i>
+        <i class='bx bx-dots-horizontal-rounded'></i>
+        <li class="dashboardList">
+          <i class='bx bx-shape-triangle bx-rotate-270 activity'></i>
+          <!-- <i class='bx bx-math' activity></i> -->
+          <i class='bx bxl-graphql'></i>
+          <i class='bx bx-id-card activity'></i>
+        </li>
+      </div>
+    </h2>
+
+    <div class="home-section-container1">
+
+      <!-- actividad  figuras geometricas ------------->
+      <div id="figuras-geometricas">
+        <h1>FIGURAS GEOMETRICAS</h1>
+
+        <p>primer taller del curso practico de javascript</p>
+
+        <h2>CALCULOS</h2>
+        <div id="btnContainer">
+          <button class="btn" type="button" onclick="opcCuadrado1()">cuadrado</button>
+
+          <button class="btn" type="button" onclick="opcTriangulo1()">triangulo</button>
+
+          <button class="btn" type="button" onclick="opcCirculo1()" .>circulo</button>
+        </div>
+        <hr>
+
+        <!--operaciones con Cuadrado------>
+        <section id="opcCuadrado">
+          <br>
+          <h3>Calcula el area y el perimetro de un cuadrado</h3>
+          <form>
+            <label for="inputCuadrado">
+              Escribe cuanto mide cada lado de tu cuadrado:
+            </label>
+            <br>
+            <input id="inputCuadrado" type="number">
+            <br>
+            <br>
+            <button type="button" onclick="calcularPerimetroCuadrado()">Calcular el
+              perimetro</button>
+            <button type="button" onclick="CalcularElArea()">Calcular el area</button>
+          </form>
+          <p id=" resultadoC" class="resultado">RESULTADO</p>
+        </section>
+
+
+        <section id="opcTriangulo" style="display: none;">
+          <br>
+          <h3>Calcula el area y el perimetro de un triangulo</h3>
+
+          <form>
+            <label for="inputTriangulo1">
+              Escribe cuanto mide cada lado de tu triangulo:
+            </label>
+            <br>
+            <br>
+            lado1:<br>
+            <input id="inputTriangulo1" type="number"><br>
+            lado2:<br>
+            <input id="inputTriangulo2" type="number"> <br>
+            base:<br>
+            <input id="inputTriangulo3" type="number">
+            <br>
+            <br>
+            <button type="button" onclick="calcularAlturaTriangulo()">Calcular altura
+              triangulo</button>
+            <button type="button" onclick="calcularPerimetroTriangulo()">Calcular el
+              perimetro</button>
+            <button type="button" onclick="calcularAreaTriangulo()">Calcular el area</button>
+          </form>
+          <p id="resultadoT" class="resultado">RESULTADO</p>
+        </section>
+
+
+        <section id="opcCirculo" style="display: none;">
+          <br>
+          <h3>Calcula el area, el perimetro y el diametro de un circulo</h3>
+          <form>
+            <label for="inputCirculo">
+              Escribe cuanto mide el radio de tu circulo:
+              <br>
+            </label>
+            <input id="inputCirculo" type="number">
+            <br>
+            <br>
+            <button type="button" onclick="calcularDiametroCirculo()">Calcular
+              el diametro</button>
+            <button type="button" onclick="calcularPerimetroCirculo()">Calcular
+              el perimetro</button>
+            <button type="button" onclick="calcularAreaCirculo()">Calcular el
+              area</button>
+
+          </form>
+          <p id="resultadoCir" class="resultado">RESULTADO</p>
+        </section>
+      </div>
+
+      <!------------Actividad nomina------------------------------------------------------------------------ -->
+      <div id="nomina">
+
+        <h3> NOMINA </h3>
+
+        <p>cuarto taller del curso practico de javascript</p>
+        <br><br>
+
+        <!-- botones  para  cada formulario del usuario -->
+        <div class="btnContainer">
+          <button class="btnNomAnteriores" type="button" onclick="opcNomAnteriores()">nominas anteriores</button>
+          <button class="btnNomActual" type="button" onclick="opcNomActual()">nomina actual</button>
+          <button class="btnHorasEmpleado" type="button" name="secondButton" onclick="opcHorasEmpleado()">horas
+            empleado</button>
+        </div>
+        <!--------------------------------------------------------------------------------------------------->
+        <hr>
+
+
+        <!-- Formulario para  registro de  horas  de meses anteriores -->
+        <section class="nomAnteriores">
+          <br>
+          <h3>Horas registradas en la nomina de los meses anteriores</h3>
+          <form name="formNomAnteriores">
+            <label>Fecha nomina <br>
+              <input id="dateIni" type="date" name="dateIni">
+            </label>
+            <br>
+            <label>hasta<br>
+              <input id="dateFin" type="date" min="dateIni" max="localDate" name="date">
+            </label>
+            <br>
+            <label>Cantidad horas<br>
+              <input id="cant" type="number" name="cantHours" max="300">
+            </label>
+            <br>
+            <label>Tipo horas<br>
+              <input id="type" type="list" name="hoursType" list="hoursType">
+            </label>
+            <br>
+            <button type="button" onclick="registrar(document.formNomAnteriores)">Ingresar Datos</button>
+            <button type="button" id="mostrarNomAnt" onclick="">mostrar nominas</button>
+          </form>
+          <datalist id="hoursType">
+            <option value="HOD">Horas Ordinarias Diurnas</option>
+            <option value="HON">Horas Ordinarias Nocturnas</option>
+            <option value="HDF">Horas Diurnas Festivas</option>
+            <option value="HNF">Horas Nocturnas Festivas</option>
+            <option value="HED">Horas Extras Diurnas</option>
+            <option value="HEN">Horas Extras Nocturnas</option>
+            <option value="HD">HorasDescanso</option>
+          </datalist>
+          <div id="nomAntReg">
+            <h2>Horas registradas</h2>
+            <ol type="1" id="listNomAntReg">
+            </ol>
+          </div>
+        </section>
+        <!-- Formulario para  registro de  horas  del mes actual -->
+        <section class="nomActual">
+          <br>
+          <h3>Horas registradas en la nomina del mes actual </h3>
+          <form name="formNomActual">
+            <label>Fecha nomina <br>
+              <input id="dateIni" type="date" name="dateIni">
+            </label>
+            <br>
+            <label>hasta<br>
+              <input id="dateFin" type="date" min="dateIni" max="localDate" name="date">
+            </label>
+            <br>
+            <label>Cantidad horas<br>
+              <input id="cant" type="number" name="cantHours" max="300">
+            </label>
+            <br>
+            <label>Tipo horas<br>
+              <input id="type" type="list" name="hoursType" list="hoursType">
+            </label>
+            <br>
+            <button type="button" name="firstButton" onclick="registrar(document.formNomActual)">Ingresar Datos</button>
+            <button type="button" id="comparacionNomActual" name="secondButton" onclick="">ir a comparacion</button>
+          </form>
+          <datalist id="hoursType">
+            <option value="HOD">Horas Ordinarias Diurnas</option>
+            <option value="HON">Horas Ordinarias Nocturnas</option>
+            <option value="HDF">Horas Diurnas Festivas</option>
+            <option value="HNF">Horas Nocturnas Festivas</option>
+            <option value="HED">Horas Extras Diurnas</option>
+            <option value="HEN">Horas Extras Nocturnas</option>
+            <option value="HD">HorasDescanso</option>
+          </datalist>
+
+          <div id="nomActReg">
+            <h2>Horas registradas</h2>
+            <ol type="1" id="listNomActReg">
+            </ol>
+          </div>
+        </section>
+        <!-- formulario para  registro de  horas  por parte del empleado -->
+        <section class="horasEmpleado">
+          <br>
+          <h3>Horas contabilizadas por el usuario (nomina actual)</h3>
+          <form name="formHorsEmp">
+            <label>Fecha nomina <br>
+              <input id="dateIni" type="date" name="dateIni">
+            </label>
+            <br>
+            <label>hasta<br>
+              <input id="dateFin" type="date" min="dateIni" max="localDate" name="date">
+            </label>
+            <br>
+            <label>Cantidad horas<br>
+              <input id="cant" type="number" name="cantHours" max="300">
+            </label>
+            <br>
+            <label>Tipo horas<br>
+              <input id="type" type="list" name="hoursType" list="hoursType">
+            </label>
+            <br>
+            <button type="button" name="firstButton" onclick="registrar(document.formHorsEmp)">ingresar Datos</button>
+            <button type="button" id="comparacionHorsEmp" name="secondButton" onclick="">ir a comparacion</button>
+          </form>
+          <datalist id="hoursType">
+            <option value="HOD">Horas Ordinarias Diurnas</option>
+            <option value="HON">Horas Ordinarias Nocturnas</option>
+            <option value="HDF">Horas Diurnas Festivas</option>
+            <option value="HNF">Horas Nocturnas Festivas</option>
+            <option value="HED">Horas Extras Diurnas</option>
+            <option value="HEN">Horas Extras Nocturnas</option>
+            <option value="HD">HorasDescanso</option>
+          </datalist>
+          <div id="horsEmpReg">
+            <h2>Horas registradas</h2>
+            <ol type="1" id="listHorsEmpReg">
+            </ol>
+          </div>
+        </section>
+      </div>
+    </div>
+
+
+
+    <h2 class="text2">User</h2>
+    <div class="home-section-container2"></div>
+    <h2 class="text3">Messages</h2>
+    <div class="home-section-container3"></div>
+    <h2 class="text4">Analitics</h2>
+    <div class="home-section-container4"></div>
+    <h2 class="text5">Files</h2>
+    <div class="home-section-container5"></div>
+    <h2 class="text6">Order</h2>
+    <div class="home-section-container6"></div>
+    <h2 class="text7">Saved</h2>
+    <div class="home-section-container7"></div>
+    <h2 class="text8">Settings</h2>
+    <div class="home-section-container8"></div>
+  </main>
+
+
+  <script type="text/javascript" src="./javascript/index2.js"></script>
+  <script type="text/javascript" src="javascript/index.js"> </script>
+
+</body>
+
+</html>

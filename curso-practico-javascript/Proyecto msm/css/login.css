@@ -1,0 +1,188 @@
+:root{
+  --fondo-color:#181818;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html{
+  font-size: 62.5%;
+  font-family: sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background:var(--fondo-color);
+  position: relative;
+}
+
+
+#canv{
+  opacity: 0.9;
+  position:fixed;
+  top: 0;
+  bottom: 0;
+}
+.container-all {
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+  top:15%;
+  font-size: 25pt;
+}
+
+.login-register {
+  position: relative;
+  width: 90%;
+  margin: auto;
+  height: 35px;
+  background: transparent;
+  color: #dddd00;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  border-radius: 4px;
+  padding: 2px;
+}
+.login,
+.register {
+  position: relative;
+  width: 50%;
+  cursor: pointer;
+}
+.login:hover,
+.register:hover {
+  background: transparent;
+  opacity: 0.5;
+  color: yellow;
+  padding: 7px 0px;
+  border-radius: 4px;
+  box-shadow: inset 0 0 2px lightgray;
+}
+
+.forms-container {
+  position: relative;
+  width: 100%;
+}
+
+.login-form {
+  position: relative;
+  width: 90%;
+  margin: auto;
+  transition: 1s ease;
+}
+
+.register-form,
+.privacy_policy {
+  width: 90%;
+  margin: auto;
+  display: none;
+  transition: 1s ease;
+}
+
+.slide {
+  animation-name: slide;
+  animation-duration: 0.8s;
+}
+
+@media (max-width:420px){
+  .container-all{
+    top:15%;
+  }
+}
+
+
+@keyframes slide {
+  0% {
+    margin-left: 100%;
+  }
+  100% {
+    margin-left: 15px;
+  }
+}
+.forms input {
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  border: none;
+  box-shadow: 0 0 2px rgb(0, 0, 0, 0.65);
+  padding-left: 10px;
+  margin: 15px 0px;
+  outline-width: large;
+  outline-color: #000000;
+  text-align: center;
+  background-color: transparent;
+  color: aliceblue;
+}
+.forms input::placeholder,
+.forms button::placeholder {
+  text-align: center;
+}
+.forms button {
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  border: none;
+  color: #dddd00;
+  margin: 10px 0px;
+  background: transparent;
+  outline-width: large;
+  outline-color: #046954;
+}
+
+.forms button:hover {
+  background: transparent;
+  opacity: 0.5;
+}
+
+.error-default {
+  font-size: 13px;
+  color: yellow;
+  opacity: 0.5;
+}
+
+header {
+  color: yellow;
+}
+
+a {
+  color: rgb(162, 51, 236);
+}
+
+/* for if you type wrong details or no details at all */
+.error-red {
+  color: #ff7e40;
+  background: rgba(255, 0, 0, 0.592);
+  padding: 10px;
+  border-radius: 4px;
+}
+
+/* for if you type correct details */
+.error-green {
+  color: #baff80;
+  background: rgba(34, 255, 0, 0.592);
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.error-black{
+  background: transparent;
+   color: yellow;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.explain {
+  margin: 5px 0px;
+  
+  font-size: 14px;
+  color: rgb(45, 45, 45);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>figuras geometricas | curso practico de  javascript platzi</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            color: whitesmoke;
+            background: transparent;
+        }   
+
+        body{
+            padding: 10px;
+            background-color: darkblue;
+        }
+
+        h1,h2{
+            color: lime;
+        }
+        header{
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        section{
+            display: none;
+        }
+
+        /* CALCULOS------------------------------------ */
+        #opcContainer, #opcContainer h3{
+            text-align: center;
+            color: rgb(200, 6, 200);
+            font-size: 27px;
+            
+        }
+
+        .container{
+            display: flex;
+            justify-content: center;
+            align-content: space-between ;
+            margin-top: 5px;
+        }
+
+        .opcBtn{
+            height: 70px;
+            width: 120px;
+            color: rgb(47, 187, 233);
+            font-weight: bold;
+            font-size: 20px;
+            border-style: none;
+            border: 2px solid purple;
+            border-radius: 20px;
+            background: orangered;
+            
+
+        }
+        .opcBtn:hover{
+            background: rgba(255, 68, 0, 0.825);
+            color: grey;
+        }
+        /* -------------------------------------------- */
+
+
+        input{
+            border-style: none ;
+            border:  1px solid black;
+            color: orange;
+            width: 40px;
+        }
+        .resultado{
+            color: lime;
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 28px;
+        }
+
+        button{
+                    margin: 3px;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>
+            FIGURAS GEOMETRICAS
+        </h1>
+        
+        <p>primer taller del curso practico de  javascript</p>
+    </header>
+    <br><br><br>
+
+     <!--------------------------------------------------------------------------------------------------->
+     <div id="opcContainer">
+        <h3>CALCULOS</h3>
+        <div class="container">
+            <button  class="opcBtn" type="button"  onclick="opcCuadrado1()">cuadrado</button>
+            <button  class="opcBtn" type="button" onclick="opcTriangulo1()">triangulo</button>
+            <button  class="opcBtn" type="button" onclick="opcCirculo1()">circulo</button>
+        </div>
+    </div>
+    <!--------------------------------------------------------------------------------------------------->
+   <hr>
+
+    <section id="opcCuadrado">
+        <br>
+        <h2>Calcula el area  y el perimetro de  un cuadrado</h2>
+        <form >
+            <label for="inputCuadrado">
+                Escribe cuanto mide  cada lado de  tu cuadrado:
+            </label>
+            <input  id="inputCuadrado" type="number">
+            <br>
+            <br>
+            <button type="button" onclick="calcularPerimetroCuadrado()">Calcular el perimetro</button>
+            <button type="button" onclick="calcularAreaCuadrado()">Calcular el area</button>
+        </form>
+        <p id="resultadoC" class="resultado">RESULTADO</p>
+    </section>
+    
+
+    <section id="opcTriangulo">
+        <br>
+        <h2>Calcula el area  y el perimetro de  un triangulo</h2>
+        <form >
+            <label for="inputTriangulo1">
+                Escribe cuanto mide  cada lado de  tu triangulo:
+            </label>
+            <br>
+            <br>
+            lado1:
+            <input  id="inputTriangulo1" type="number">,
+            lado2
+            <input  id="inputTriangulo2" type="number">
+            base:
+            <input  id="inputTriangulo3" type="number">
+            <br>
+            <br>
+            <button  type="button" onclick="calcularAlturaTriangulo()">Calcular altura triangulo</button>
+            <button type="button" onclick="calcularPerimetroTriangulo()">Calcular el perimetro</button>
+
+            <button type="button" onclick="calcularAreaTriangulo()">Calcular el area</button>
+        </form>
+        <p id="resultadoT" class="resultado">RESULTADO</p>
+    </section>
+
+
+    <section id="opcCirculo">
+        <br>
+        <h2>Calcula el area, el perimetro y el diametro de  un circulo</h2>
+        <form >
+            <label for="inputCirculo">
+                Escribe cuanto mide el radio de  tu circulo:
+            </label>
+            <input  id="inputCirculo" type="number">
+            <br>
+            <br>
+            <button type="button" onclick="calcularDiametroCirculo()">Calcular el diametro</button>
+            <button type="button" onclick="calcularPerimetroCirculo()">Calcular el perimetro</button>
+            <button type="button" onclick="calcularAreaCirculo()">Calcular el area</button>
+            
+        </form>
+        <p id="resultadoCir" class="resultado">RESULTADO</p>
+    </section>
+    <script src="./figuras.js"></script>
+</body>
+</html>

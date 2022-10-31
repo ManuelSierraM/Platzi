@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: rgb(5, 5, 60);
+            color: lime;
+            text-align: center;
+        }
+
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .result{
+            display: flex;
+            /* flex-direction: row; */
+        }
+        p{
+            color: whitesmoke;
+        }
+    </style>
+    <title>moda</title>
+</head>
+<body>
+    <h1>moda</h1>
+
+    <label for="valores">Ingrese los valores a operar</label>
+    <input  type="number"  id="valores">
+    <button  type="button" onclick="mostrarDatos(), borrarValor()" >Agregar valor.</button>
+    <hr>
+    <h3>Valores a operar:</h3>
+    
+    <p id="contentValues"></p>
+    <br>
+    <button  onclick="moda()">Operar valores</button>
+    <br>
+    <br>
+    <div class="container">
+        <div class="result">
+            <h3 id="medianaTotal1">Total moda</h3><h3 id="medianaTotal2"></h3>
+        </div>
+    </div>
+    <br>
+
+
+    <script src="./moda.js"></script>
+</body>
+</html>
