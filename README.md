@@ -1,2 +1,2 @@
 # Platzi
-Todas mis  practicas  en platzi
+Aqui van  a estar todas mis  practicas de programacion en platzi
