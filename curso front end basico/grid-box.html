@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid</title>
+    <style>
+        *{
+            background: rgb(4, 4, 54);
+            margin: 0;
+        }
+
+        h1{ 
+            color: aqua;
+            margin-left: 41%;
+            margin-top: 10%;
+        }
+
+        .container{
+            display: grid;
+            width: 400px;
+            height: 400px;
+            background: orangered;
+            grid-template-columns: 1fr 1fr 1fr ;
+            grid-template-rows: 1fr 1fr 1fr ;
+            margin-left: 35%;
+            margin-top: 5%;
+            border-radius: 10px;
+        }
+
+        .item{
+            background:rgb(6, 151, 6);
+            text-align:center;
+            border-radius: 10px ;
+        }
+
+
+
+        .container .item:nth-child(5){
+            grid-column: 3 ;
+            grid-row: 3 ;
+        }
+
+        .container .item:nth-child(4){
+            grid-column: 1;
+            grid-row: 3;
+        }
+
+        .container .item:nth-child(3){
+            grid-column: 3;
+            grid-row: 1;
+        }
+
+        .container .item:nth-child(2){
+            grid-column: 1 ;
+            grid-row: 1;
+        }
+
+        .container .item:nth-child(1){
+            grid-column: 2;
+            grid-row: 2;
+        }
+    </style>
+</head>
+<body>
+    <h1>GRID BOX</h1>
+    <div class="container">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+</body>
+</html>

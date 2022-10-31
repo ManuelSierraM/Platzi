@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+    <style>
+        *{
+            background: rgb(4, 4, 54);
+            margin: 0;
+        }
+
+        .container{
+                display: flex;
+                background: orangered;
+                max-height: 1000px ;
+                height: 200px;
+                justify-content: center;
+                align-items: center;
+                /* flex-direction: column; -> modifica el eje en que se 
+                posicionan los elementos dentro del flex box (vertical u orizontalmente) */
+
+        }
+
+        .item{
+            width: 30px;
+            height: 30px;
+            background: green;
+            margin: 10px;
+
+
+        }
+        .container .item:nth-child(2n + 1){
+            background: rgb(0, 191, 255);
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+</body>
+</html>

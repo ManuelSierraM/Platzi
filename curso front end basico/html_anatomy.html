@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html's anatomy</title>
+    <style>
+        *{
+            background: rgb(1, 1, 49);
+            color: white;
+        }
+
+        .list li:nth-child(2){
+            color: lime;
+        }
+
+        .list li:nth-child(2):hover{
+            color: rgb(0, 176, 230);
+        }
+
+        .list li::first-letter{
+            color: purple;
+            font-size: 30px;
+        }
+        a[href="www.google.com"]{
+            color: rgb(0, 176, 230);
+
+            
+        }
+
+
+        input{
+            border-color: transparent;
+            color: grey;
+        }
+        input:hover{
+            color: lime;
+        }
+        ::placeholder{
+            color: rgb(0, 176, 230);
+        }
+
+        div p{
+            color: rgb(0, 176, 230);
+        }
+        div p::before,  div p::after{
+            content: " =) ";
+        }
+
+        div > div{
+            color: lime ;
+        }
+        div:hover{
+            color: purple !important;
+        }
+        
+        section + a{
+           background: purple;
+           
+        }
+
+        div ~ .admiracion{
+            color: rgb(4, 117, 4); 
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <section>
+        <h1>PLATZY</h1>
+        <p>tiene una comunidad</p>
+        <ul class="list">
+            <li>increible</li>
+            <li>maravillosa</li>
+            <li>inigualable</li>
+
+        </ul>
+    </section>
+    <a href="www.google.com">google</a>
+    <input type="text" name="" id="" placeholder="Name...">
+    <div>
+        <p>platzi es increible</p>
+        <div>!!!!!!</div>
+    </div>
+
+    <div>
+        <p>platzi es asombroso</p>
+    </div>
+    <div class="admiracion">!!!!!!</div>
+</body>
+</html>
