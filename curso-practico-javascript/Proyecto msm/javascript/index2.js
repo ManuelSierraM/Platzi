@@ -66,19 +66,24 @@ btnNomina.addEventListener('click', () =>{
 
 
 //----Actividad de FIGURAS GEOMETRICAS
-//desplegando  areas de la actividad
+//desplegando y limpiando areas de la actividad
 function opcCuadrado1() {
-
+document.querySelector('#formCuadrado').reset();
+document.getElementById('resultadoC').innerHTML= '';
     opcCuadrado.style.display="block"; 
     opcTriangulo.style.display="none";
     opcCirculo.style.display="none";
 };   
 function opcTriangulo1() {
+document.querySelector('#formTriangulo').reset();
+document.getElementById('resultadoT').innerHTML= '';
     opcCuadrado.style.display="none"; 
     opcTriangulo.style.display="block";
     opcCirculo.style.display="none";
 }
 function opcCirculo1() {
+document.querySelector('#formCirculo').reset();
+document.getElementById('resultadoCir').innerHTML= '';
     opcCuadrado.style.display="none"; 
     opcTriangulo.style.display="none";
     opcCirculo.style.display="block";
@@ -88,11 +93,11 @@ function opcCirculo1() {
 // const ladoCuadrado = 5;
 // console.log(`lados del cuadrado miden ${ladoCuadrado}cm`);
 function perimetroCuadrado(lado) {
-    return lado * 4;
+    return (lado * 4)
 }
 // console.log(`El perimetro del cuadrado es ${perimetroCuadrado}cm`);
 function areaCuadrado(lado) {
-    return lado * lado ;
+    return (lado * lado)
 }
 // console.log(`El area del cuadrado es ${areaCuadrada}cm^2`);
 //---------------------------------------------------------------------
@@ -145,21 +150,15 @@ function areaCirculo(radio) {
 // aqui interactuamos  con html
 // interaccion con cuadrado
 function calcularPerimetroCuadrado() {
-    const input = document.getElementById('inputCuadrado');
-    const resultado = document.getElementById('resultadoC');
-    const value = input.value;
-    
-    const perimetro = perimetroCuadrado(value);
-    resultado.innerHTML = `${perimetro}cm`;
+  const valueInputCuadrado = document.getElementById('inputCuadrado');
+  document.getElementById('resultadoC').innerHTML= `${perimetroCuadrado(valueInputCuadrado.value)}cm`;
 }
-function calcularAreaCuadrado() {
-    const input = document.getElementById('inputCuadrado');
-    const resultado = document.getElementById('resultadoC');
-    const value = input.value;
 
-    const area = areaCuadrado(value)
-    resultado.innerHTML = `${area}cm`;
+function calcularAreaCuadrado() {
+    const valueInputCuadrado = document.getElementById('inputCuadrado');
+document.getElementById('resultadoC').innerHTML= `${areaCuadrado(valueInputCuadrado.value)}cm`
 }
+
 
 //interaccion  con triangulo
 function alturaTriangulo(lado1, lado2, base) {
@@ -174,7 +173,8 @@ function calcularAlturaTriangulo() {
     const resultado = document.getElementById('resultadoT');
     const altura = alturaTriangulo(lado1, lado2, base);
 
-    if (lado1 === lado2 || lado1 === base || base === lado2) { 
+    if (lado1 == lado2 && lado1 == base && 
+        base == lado2) { 
         resultado.innerHTML= `Es un triangulo isoseles y su  altura es:  ${parseInt(altura)}`;
     }
     resultado.innerHTML = `${parseInt(altura)}cm`;
@@ -232,6 +232,8 @@ function opcNomAnteriores() {
 
 };   
 function opcNomActual() {
+           document.getElementById('titlNomActualComp').style.display = 'none'
+document.getElementById('formNomActualComp').style.display = 'none'
     nomAnteriores.style.display="none"; 
     nomActual.style.display="grid";
     horasEmpleado.style.display="none";
@@ -245,6 +247,24 @@ function opcHorasEmpleado() {
     clearForm(document.formHorsEmp);
     
 }
+//limpiando formulario al cambiar a otro 
+function clearForm(argument) {
+    
+    if (argument == document.formNomActual ||! registroDeHoras) {
+        argument.firstButton.style.opacity = '1';
+        argument.firstButton.style.pointerEvents = 'auto';
+        argument.secondButton.style.opacity = '0.2';
+        argument.secondButton.style.pointerEvents = 'none';
+    }
+    
+    if (registroDeHoras.length > 0 ) {
+    argument.reset();
+    ol.textContent = ""
+    registroDeHoras.length = 0;
+    }
+   
+}
+
 
 //almacenando y mostrando las horas registradas
 let ol;
@@ -301,21 +321,18 @@ function registrar(argument) {
 
 }
 
+//aqui realizamos las operaciones de cada seccion de la actividad
 
-//limpiando formulario al cambiar a otro 
-function clearForm(argument) {
-    
-    if (argument == document.formNomActual ||! registroDeHoras) {
-        argument.firstButton.style.opacity = '1';
-        argument.firstButton.style.pointerEvents = 'auto';
-        argument.secondButton.style.opacity = '0.2';
-        argument.secondButton.style.pointerEvents = 'none';
-    }
-    
-    if (registroDeHoras.length > 0 ) {
-    argument.reset();
-    ol.textContent = ""
-    registroDeHoras.length = 0;
-    }
-   
+function  comparacion(argument) {
+    document.getElementById('titlNomActualComp').style.display = 'inline-block';
+argument.style.display = 'block';
+
+ argument == document.formNomActualComp?(
+        document.getElementById('titlNomActual').style.visibility = 'none',
+        document.formNomActual.style.display = 'none'):
+        console.error('no entro al ternario') 
+        
+        
 }
+
+

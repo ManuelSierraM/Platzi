@@ -51,6 +51,7 @@ body {
   opacity: 0.7;
   position: absolute;
   box-sizing: border-box;
+  overflow-y: 0;
 }
 
 /* scrollbarr  */

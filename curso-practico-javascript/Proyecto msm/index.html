@@ -105,14 +105,15 @@
       </li>
     </ul>
   </nav>
-  <!--</header>-->
+ <!--</header>-->
 
-  <!-- areas de la pagina ----------------------------------------------------------->
+ <!-- areas de la pagina ----------------------------------------------------------->
 
   <main class="home-section">
 
     <!-- seccion dashboard  ----------->
     <h2 class="text1">Dashboard
+      <!-- lista de actividades para dashboard -->
       <div id="dashboardContainer">
         <i class='bx bx-caret-right' id="btnActivities"></i>
         <i class='bx bx-dots-horizontal-rounded'></i>
@@ -127,7 +128,8 @@
 
     <div class="home-section-container1">
 
-      <!-- actividad  figuras geometricas ------------->
+
+    <!-- actividad  figuras geometricas ------------->
       <div id="figuras-geometricas">
         <h1>FIGURAS GEOMETRICAS</h1>
 
@@ -147,27 +149,26 @@
         <section id="opcCuadrado">
           <br>
           <h3>Calcula el area y el perimetro de un cuadrado</h3>
-          <form>
+          <form id="formCuadrado">
             <label for="inputCuadrado">
               Escribe cuanto mide cada lado de tu cuadrado:
-            </label>
-            <br>
+            </label><br>
             <input id="inputCuadrado" type="number">
             <br>
             <br>
             <button type="button" onclick="calcularPerimetroCuadrado()">Calcular el
               perimetro</button>
-            <button type="button" onclick="CalcularElArea()">Calcular el area</button>
+            <button type="button" onclick="calcularAreaCuadrado()">Calcular el area</button>
           </form>
-          <p id=" resultadoC" class="resultado">RESULTADO</p>
+          <p id="resultadoC" class="resultado">RESULTADO</p>
         </section>
 
-
-        <section id="opcTriangulo" style="display: none;">
+        <!-- operaciones con triángulo -->
+        <section id="opcTriangulo" >
           <br>
           <h3>Calcula el area y el perimetro de un triangulo</h3>
 
-          <form>
+          <form id="formTriangulo">
             <label for="inputTriangulo1">
               Escribe cuanto mide cada lado de tu triangulo:
             </label>
@@ -190,11 +191,11 @@
           <p id="resultadoT" class="resultado">RESULTADO</p>
         </section>
 
-
-        <section id="opcCirculo" style="display: none;">
+        <!-- operaciones con circulo -->
+        <section id="opcCirculo">
           <br>
           <h3>Calcula el area, el perimetro y el diametro de un circulo</h3>
-          <form>
+          <form id="formCirculo">
             <label for="inputCirculo">
               Escribe cuanto mide el radio de tu circulo:
               <br>
@@ -217,7 +218,7 @@
       <!------------Actividad nomina------------------------------------------------------------------------ -->
       <div id="nomina">
 
-        <h3> NOMINA </h3>
+        <h2> NOMINA </h2>
 
         <p>cuarto taller del curso practico de javascript</p>
         <br><br>
@@ -229,21 +230,19 @@
           <button class="btnHorasEmpleado" type="button" name="secondButton" onclick="opcHorasEmpleado()">horas
             empleado</button>
         </div>
-        <!--------------------------------------------------------------------------------------------------->
         <hr>
-
-
+        <!--------------------------------------------------------------------------------------------------->
         <!-- Formulario para  registro de  horas  de meses anteriores -->
         <section class="nomAnteriores">
           <br>
           <h3>Horas registradas en la nomina de los meses anteriores</h3>
           <form name="formNomAnteriores">
             <label>Fecha nomina <br>
-              <input id="dateIni" type="date" name="dateIni">
+              <input id="dateIni" type="month" name="dateIni">
             </label>
             <br>
             <label>hasta<br>
-              <input id="dateFin" type="date" min="dateIni" max="localDate" name="date">
+              <input id="dateFin" type="month" min="dateIni" max="localDate" name="date">
             </label>
             <br>
             <label>Cantidad horas<br>
@@ -267,22 +266,23 @@
             <option value="HD">HorasDescanso</option>
           </datalist>
           <div id="nomAntReg">
-            <h2>Horas registradas</h2>
+            <h4>Horas registradas</h4>
             <ol type="1" id="listNomAntReg">
             </ol>
           </div>
         </section>
+        
         <!-- Formulario para  registro de  horas  del mes actual -->
         <section class="nomActual">
           <br>
-          <h3>Horas registradas en la nomina del mes actual </h3>
-          <form name="formNomActual">
+          <h3 id="titlNomActual">Horas registradas en la nomina del mes actual </h3> 
+          <form name="formNomActual" >
             <label>Fecha nomina <br>
-              <input id="dateIni" type="date" name="dateIni">
+              <input id="dateIni" type="month"  name="dateIni">
             </label>
             <br>
             <label>hasta<br>
-              <input id="dateFin" type="date" min="dateIni" max="localDate" name="date">
+              <input id="dateFin" type="month" min="dateIni" max="localDate" name="date">
             </label>
             <br>
             <label>Cantidad horas<br>
@@ -294,7 +294,7 @@
             </label>
             <br>
             <button type="button" name="firstButton" onclick="registrar(document.formNomActual)">Ingresar Datos</button>
-            <button type="button" id="comparacionNomActual" name="secondButton" onclick="">ir a comparacion</button>
+            <button type="button" id="comparacionNomActual" name="secondButton" onclick="comparacion(document.formNomActualComp)">ir a comparacion</button>
           </form>
           <datalist id="hoursType">
             <option value="HOD">Horas Ordinarias Diurnas</option>
@@ -305,9 +305,23 @@
             <option value="HEN">Horas Extras Nocturnas</option>
             <option value="HD">HorasDescanso</option>
           </datalist>
-
+          <h3 id="titlNomActualComp">Comparacion de nóminas</h3>
+          <!--formulario para comparación de horas   -->
+          <form id="formNomActualComp" name="formNomActualComp">
+            <label>Fecha Inicial<br>
+              <input id="dateIni" type="month" name="dateIni">
+            </label>
+            <br>
+            <label>Fecha final<br>
+              <input id="dateFin" type="month" min="dateIni" max="localDate" name="date">
+            </label>
+            <br>
+            <br>
+            <button type="button" name="firstButton" onclick="registrar(document.formNomActual)">Comparar Datos</button>
+            <button type="button" name="secondButton" onclick="">regresar</button>
+          </form>
           <div id="nomActReg">
-            <h2>Horas registradas</h2>
+            <h4>Horas registradas</h4>
             <ol type="1" id="listNomActReg">
             </ol>
           </div>
@@ -318,11 +332,11 @@
           <h3>Horas contabilizadas por el usuario (nomina actual)</h3>
           <form name="formHorsEmp">
             <label>Fecha nomina <br>
-              <input id="dateIni" type="date" name="dateIni">
+              <input id="dateIni" type="month" name="dateIni">
             </label>
             <br>
             <label>hasta<br>
-              <input id="dateFin" type="date" min="dateIni" max="localDate" name="date">
+              <input id="dateFin" type="month" min="dateIni" max="localDate" name="date">
             </label>
             <br>
             <label>Cantidad horas<br>
@@ -346,7 +360,7 @@
             <option value="HD">HorasDescanso</option>
           </datalist>
           <div id="horsEmpReg">
-            <h2>Horas registradas</h2>
+            <h4>Horas registradas</h4>
             <ol type="1" id="listHorsEmpReg">
             </ol>
           </div>
@@ -372,9 +386,9 @@
     <div class="home-section-container8"></div>
   </main>
 
-
-  <script type="text/javascript" src="./javascript/index2.js"></script>
-  <script type="text/javascript" src="javascript/index.js"> </script>
+   <script type="text/javascript" src="javascript/index.js"></script>
+   <script type="text/javascript" src="javascript/index2.js"></script>
+   
 
 </body>
 
